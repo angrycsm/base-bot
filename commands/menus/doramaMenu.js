@@ -8,19 +8,25 @@ module.exports = {
 	async execute(interaction) {
     const select = new StringSelectMenuBuilder()
     .setCustomId('Dorama')
-    .setPlaceholder('Selecione algo que goste.')
+    .setPlaceholder('✨️Selecione a Série✨️')
     .addOptions(
       new StringSelectMenuOptionBuilder()
-      .setLabel('Desgraça ao seu Dispor')
-      .setDescription('Aperte para ir assistir')
+      .setLabel('💻: Desgraça ao seu Dispor ➡️')
+      .setDescription('Selecione para ver os episódios disponíveis.')
       .setValue('Desgraça ao seu Dispor')
     );
 
+    const embed = new EmbedBuilder()
+      .setColor('#B757FF')
+      .setTitle('Lista de Doramas💜')
+      .setDescription('Aqui está listado as doramas que estão disponíveis para assistir, obrigado pela preferência.')
+    
+    
     const row = new ActionRowBuilder()
     .addComponents(select);
 
     await interaction.reply({
-      content: 'Escolha!', components: [row],
+      content: '', components: [row], embeds: [embed], ephemeral: true,
     });
   },
 };
