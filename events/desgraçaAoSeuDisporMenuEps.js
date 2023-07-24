@@ -4,12 +4,16 @@ module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {
 
-  const embedLink = new EmbedBuilder()
+  const embedLink= new EmbedBuilder()
     .setColor('#B757FF')
     .setTitle('Episódios de Desgraça ao seu Dispor')
+    .setDescription('`Temporada Completa✅️`')
+    .addFields(
+      {name: 'Sinopse:', value: 'Uma mulher com pouco tempo de vida e um homem com o superpoder de destruir o mundo descobrem o significado do amor.', inline: true},
+    )
     .setImage('https://i.imgur.com/ZspwIxs.jpg')
     .setTimestamp()
-
+    
   const list = new StringSelectMenuBuilder()
     .setCustomId('Dorama lista de Episódios')
     .setPlaceholder('Selecione seu episódio ')
